@@ -1,18 +1,36 @@
-%define		kdeappsver	18.04.0
-%define		qtver		5.3.2
+%define		kdeappsver	18.12.0
+%define		qtver		5.9.0
 %define		kaname		kalzium
 Summary:	Kalzium
 Name:		ka5-%{kaname}
-Version:	18.04.0
+Version:	18.12.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	8e99e770e721d9477ba7c00009db843d
+# Source0-md5:	dda62cded08b6246e574166ee9f4679b
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
+BuildRequires:	Qt5Gui-devel
+BuildRequires:	Qt5OpenGL-devel
+BuildRequires:	Qt5Script-devel
+BuildRequires:	Qt5Svg-devel
+BuildRequires:	Qt5Widgets-devel
 BuildRequires:	cmake >= 2.8.12
+BuildRequires:	gettext-devel
 BuildRequires:	kf5-extra-cmake-modules >= 1.4.0
+BuildRequires:	kf5-karchive-devel >= 5.42.0
+BuildRequires:	kf5-kconfig-devel >= 5.42.0
+BuildRequires:	kf5-kcoreaddons-devel >= 5.42.0
+BuildRequires:	kf5-kdelibs4support-devel >= 5.42.0
+BuildRequires:	kf5-kdoctools-devel >= 5.42.0
+BuildRequires:	kf5-khtml-devel >= 5.42.0
+BuildRequires:	kf5-ki18n-devel >= 5.42.0
+BuildRequires:	kf5-kparts-devel >= 5.42.0
+BuildRequires:	kf5-kplotting-devel >= 5.42.0
+BuildRequires:	kf5-kunitconversion-devel >= 5.42.0
+BuildRequires:	kf5-kwidgetsaddons-devel >= 5.42.0
+BuildRequires:	kf5-solid-devel >= 5.42.0
 BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	shared-mime-info
@@ -21,11 +39,30 @@ BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Kalzium.
+Kalzium is your digital replacement for the periodic table on paper.
+It is a program that visualizes the Periodic Table of Elements (PSE)
+and includes basic information about all common elements in the PSE.
+It has a gained much more functions over time.
+
+Features
+
+- versatile overview of all important data from the elements like
+  melting points, electron affinity, electronegativity, electron
+  configuration, radii, mass, ionisation energy
+- tool to visualize the spectral lines of each element
+- different colored views of the PSE: separation of the different
+  blocks, Year simulator, Temperature simulator
+- Molecular weight calculator
+- an Isotope table
+- 3D molecule editor, with a load and save functionality
+- an equation solver for stoichiometric problems
+- filetype conversion for different types of chemical programs
+- tool to produce a comprehensive list of all
+  Risk_and_Safety_Statements
 
 %package devel
 Summary:	Header files for %{kaname} development
-Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kpname}
+Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kaname}
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
