@@ -1,14 +1,15 @@
-%define		kdeappsver	18.12.1
+%define		kdeappsver	19.04.1
+%define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		kalzium
 Summary:	Kalzium
 Name:		ka5-%{kaname}
-Version:	18.12.1
+Version:	19.04.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	00a2ce386e4aec4fc2a38f229ef657a5
+# Source0-md5:	75124c899c6b0ec14362769f99472d50
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel
@@ -18,20 +19,22 @@ BuildRequires:	Qt5Svg-devel
 BuildRequires:	Qt5Widgets-devel
 BuildRequires:	cmake >= 2.8.12
 BuildRequires:	gettext-devel
-BuildRequires:	kf5-extra-cmake-modules >= 1.4.0
-BuildRequires:	kf5-karchive-devel >= 5.42.0
-BuildRequires:	kf5-kconfig-devel >= 5.42.0
-BuildRequires:	kf5-kcoreaddons-devel >= 5.42.0
-BuildRequires:	kf5-kdelibs4support-devel >= 5.42.0
-BuildRequires:	kf5-kdoctools-devel >= 5.42.0
-BuildRequires:	kf5-khtml-devel >= 5.42.0
-BuildRequires:	kf5-ki18n-devel >= 5.42.0
-BuildRequires:	kf5-kparts-devel >= 5.42.0
-BuildRequires:	kf5-kplotting-devel >= 5.42.0
-BuildRequires:	kf5-kunitconversion-devel >= 5.42.0
-BuildRequires:	kf5-kwidgetsaddons-devel >= 5.42.0
-BuildRequires:	kf5-solid-devel >= 5.42.0
+BuildRequires:	kf5-extra-cmake-modules >= %{kframever}
+BuildRequires:	kf5-karchive-devel >= %{kframever}
+BuildRequires:	kf5-kconfig-devel >= %{kframever}
+BuildRequires:	kf5-kcoreaddons-devel >= %{kframever}
+BuildRequires:	kf5-kdelibs4support-devel >= %{kframever}
+BuildRequires:	kf5-kdoctools-devel >= %{kframever}
+BuildRequires:	kf5-khtml-devel >= %{kframever}
+BuildRequires:	kf5-ki18n-devel >= %{kframever}
+BuildRequires:	kf5-kparts-devel >= %{kframever}
+BuildRequires:	kf5-kplotting-devel >= %{kframever}
+BuildRequires:	kf5-kunitconversion-devel >= %{kframever}
+BuildRequires:	kf5-kwidgetsaddons-devel >= %{kframever}
+BuildRequires:	kf5-solid-devel >= %{kframever}
 BuildRequires:	ninja
+BuildRequires:	ocaml-facile
+BuildRequires:	openbabel-devel
 BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	shared-mime-info
@@ -81,6 +84,7 @@ install -d build
 cd build
 %cmake \
 	-G Ninja \
+	-DHTML_INSTALL_DIR=%{_kdedocdir} \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
 	..
 %ninja_build
