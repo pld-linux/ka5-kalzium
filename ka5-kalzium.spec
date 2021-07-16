@@ -64,6 +64,29 @@ Features
 - tool to produce a comprehensive list of all
   Risk_and_Safety_Statements
 
+%description -l pl.UTF-8
+Kalzium jest Twoim cyfrowym zastępnikiem dla okresowej tablicy
+pierwiastków na papierze. Wyświetla Okresowy Układ Pierwiastków (OUP)
+podając podstawowe informacje o pierwiastkach. Z czasem otrzymuje
+coraz więcej funkcji.
+
+Właściwości
+
+- wszechstronny opis wszystkich ważnych informacji o pierwiastkach,
+  jak temperatura topnienia, powinowactwo elektronowe, elektroujemność,
+  konfiguracja elektronowa, promieniotwórczość, masa atomowa, promień
+  atomowy, energia jonizacyjna
+- narzędzie do wizualizacji linii widmowych
+- kolorowe rozróżnienia OUP: oddzielne dla różnych grup,
+  symulator roku, symulator temperatury
+- kalkulator masy cząsteczek
+- tabela izotopów
+- edytor cząsteczek 3D, z opcją wczytywania i zapisywania
+- rozwiązywanie równań chemicznych
+- konwerter plików do różnych formatów używanych przez programy chemiczne
+- narzędzie do pokazywania wszechstronnej listy komunikatów
+  zagrożeń i bezpieczeństwa
+
 %package devel
 Summary:	Header files for %{kaname} development
 Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kaname}
