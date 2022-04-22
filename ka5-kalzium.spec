@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	21.12.3
+%define		kdeappsver	22.04.0
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		kalzium
 Summary:	Kalzium
 Name:		ka5-%{kaname}
-Version:	21.12.3
+Version:	22.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	29eac5a8ca1ac444fcae9d3836142049
+# Source0-md5:	1670f8c5d5fc817c4952a6649e3c722e
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel
@@ -70,24 +70,25 @@ Features
 
 %description -l pl.UTF-8
 Kalzium jest Twoim cyfrowym zastępnikiem dla okresowej tablicy
-pierwiastków na papierze. Wyświetla Okresowy Układ Pierwiastków (OUP)
-podając podstawowe informacje o pierwiastkach. Z czasem otrzymuje
-coraz więcej funkcji.
+pierwiastków na papierze. Wyświetla Okresowy Układ Pierwiastków
+(OUP) podając podstawowe informacje o pierwiastkach. Z czasem
+otrzymuje coraz więcej funkcji.
 
 Właściwości
 
 - wszechstronny opis wszystkich ważnych informacji o pierwiastkach,
-  jak temperatura topnienia, powinowactwo elektronowe, elektroujemność,
-  konfiguracja elektronowa, promieniotwórczość, masa atomowa, promień
-  atomowy, energia jonizacyjna
+  jak temperatura topnienia, powinowactwo elektronowe,
+  elektroujemność, konfiguracja elektronowa, promieniotwórczość,
+  masa atomowa, promień atomowy, energia jonizacyjna
 - narzędzie do wizualizacji linii widmowych
-- kolorowe rozróżnienia OUP: oddzielne dla różnych grup,
-  symulator roku, symulator temperatury
+- kolorowe rozróżnienia OUP: oddzielne dla różnych grup, symulator
+  roku, symulator temperatury
 - kalkulator masy cząsteczek
 - tabela izotopów
 - edytor cząsteczek 3D, z opcją wczytywania i zapisywania
 - rozwiązywanie równań chemicznych
-- konwerter plików do różnych formatów używanych przez programy chemiczne
+- konwerter plików do różnych formatów używanych przez programy
+  chemiczne
 - narzędzie do pokazywania wszechstronnej listy komunikatów
   zagrożeń i bezpieczeństwa
 
@@ -191,6 +192,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(sv) %{_mandir}/sv/man1/kalzium.1*
 %lang(uk) %{_mandir}/uk/man1/kalzium.1*
 %{_datadir}/metainfo/org.kde.kalzium.appdata.xml
+%{_datadir}/qlogging-categories5/kalzium.categories
 
 %files devel
 %defattr(644,root,root,755)
