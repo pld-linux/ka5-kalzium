@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	22.08.1
+%define		kdeappsver	22.08.2
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kalzium
 Summary:	Kalzium
 Name:		ka5-%{kaname}
-Version:	22.08.1
-Release:	2
+Version:	22.08.2
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	1bb47f50b25303e2f40f8ab6aaa40559
+# Source0-md5:	c20f215923b526fb514a3441d3d8c6a7
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel
